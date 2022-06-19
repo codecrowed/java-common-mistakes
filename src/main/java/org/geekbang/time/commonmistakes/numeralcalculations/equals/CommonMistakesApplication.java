@@ -1,6 +1,7 @@
 package org.geekbang.time.commonmistakes.numeralcalculations.equals;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -11,6 +12,7 @@ public class CommonMistakesApplication {
         wrong();
         right();
         set();
+        list();
     }
 
     private static void wrong() {
@@ -33,6 +35,12 @@ public class CommonMistakesApplication {
         Set<BigDecimal> treeSet = new TreeSet<>();
         treeSet.add(new BigDecimal("1.0"));
         System.out.println(treeSet.contains(new BigDecimal("1")));//返回true
+    }
+
+    private static void list(){
+        ArrayList<BigDecimal> list = new ArrayList<>();
+        list.add(new BigDecimal("1.0"));
+        System.out.println(list.contains(new BigDecimal("1")));
     }
 
 }

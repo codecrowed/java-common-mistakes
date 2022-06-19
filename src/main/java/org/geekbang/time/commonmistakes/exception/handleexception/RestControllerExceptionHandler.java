@@ -25,4 +25,23 @@ public class RestControllerExceptionHandler {
             return new APIResponse(false, null, GENERIC_SERVER_ERROR_CODE, GENERIC_SERVER_ERROR_MESSAGE);
         }
     }
+
+    @ExceptionHandler(NullPointerException.class)
+    public APIResponse npeHandle(){
+
+        return new APIResponse(false, null, GENERIC_SERVER_ERROR_CODE, GENERIC_SERVER_ERROR_MESSAGE);
+    }
+
+    @ExceptionHandler(BizException.class)
+    public APIResponse bizHandle(){
+
+        return new APIResponse(false, null, GENERIC_SERVER_ERROR_CODE, GENERIC_SERVER_ERROR_MESSAGE);
+    }
+}
+
+class BizException extends Exception{
+
+    public BizException(){
+        super();
+    }
 }
